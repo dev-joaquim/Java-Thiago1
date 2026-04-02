@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+
+public class PerimetroTriangulo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Qual tipo de triangulo?");
+        System.out.println("Equilatero digite: 1");
+        System.out.println("Isocelis digite: 2");
+        System.out.println("Escaleno digite: 3");
+        int tipo = sc.nextInt();
+
+        if(tipo==1){
+            System.out.println("Digite o lado do retangulo:");
+            double lado = sc.nextDouble();
+
+            double res = lado * 3;
+            System.out.println("O perímetro é: " + res);
+        }else if(tipo==2){
+            System.out.println("Digite os lados iguais do triangulo:");
+            double ladoIgual = sc.nextDouble();
+            System.out.println("Digite o lado diferente do triangulo:");
+            double ladoDif = sc.nextDouble();
+
+            double res = (ladoIgual * 2) + ladoDif;
+            System.out.println("O perímetro é: " + res);
+        }else if(tipo==3){
+            System.out.println("Digite o lado do triangulo:");
+            double lado1 = sc.nextDouble();
+
+            System.out.println("Digite outro lado do triangulo:");
+            double lado2 = sc.nextDouble();
+
+            System.out.println("Digite o lado 3 do triangulo:");
+            double lado3 = sc.nextDouble();
+
+            double res = lado1 + lado2 + lado3;
+            System.out.println("O perímetro é: " + res);
+        }
+
+    }
+}

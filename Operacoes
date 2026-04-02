@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+
+public class Operacoes {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite um numero");
+        double x = sc.nextDouble();
+
+        System.out.println("Digite outro numero");
+        double y = sc.nextDouble();
+
+        System.out.println("Digite 1 para SOMA;");
+        System.out.println("Digite 2 para SUBTRAÇÃO;");
+        System.out.println("Digite 3 para MULTIPLICAÇÕ;");
+        System.out.println("Digite 4 para DIVISÃO.");
+
+        int z = sc.nextInt();
+        double res = 0;
+
+        if (z == 1) {
+            res = x + y;
+            System.out.println("A soma é: " + res);
+        } else if (z == 2) {
+            res = x - y;
+            System.out.println("A subtração é: " + res);
+        } else if (z == 3) {
+            res = x * y;
+            System.out.println("A multiplicação é: " + res);
+        } else if (z == 4) {
+            res = x / y;
+            System.out.println("A divisão é: " + res);
+        }else {
+            System.out.println("Operação invalido! Tente novamente.");
+        }
+
+    }
+
+}

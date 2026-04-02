@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o primeiro lado");
+        double lado1 = sc.nextDouble();
+        System.out.println("Digite o segundo lado");
+        double lado2 = sc.nextDouble();
+        System.out.println("Digite o terceiro lado");
+        double lado3 = sc.nextDouble();
+
+        if ((lado1==lado2)&&(lado3==lado2)){
+            System.out.println("Equilatero");
+        } else if ((lado1==lado2)&&(lado3==0)) {
+            System.out.println("Não é possivel");
+        } else if ((lado1==lado3)&&(lado2==0)) {
+            System.out.println("Não é possivel");
+        } else if ((lado3==lado2)&&(lado1==0)) {
+            System.out.println("Não é possivel");
+        } else if ((lado1==lado2)&&(lado3!=lado2)) {
+            System.out.println("Isocelis");
+        } else if ((lado1==lado3)&&(lado3!=lado2)) {
+            System.out.println("Isocelis");
+        } else if ((lado3==lado2)&&(lado3!=lado1)) {
+            System.out.println("Isocelis");
+        } else {
+            System.out.println("escaleno");
+        }
+    }
+
+}

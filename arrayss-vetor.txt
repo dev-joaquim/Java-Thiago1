@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+
+
+       double [] temperaturas = new double[365];
+       temperaturas[0] = 31.0;
+       temperaturas[1] = 33.2;
+       temperaturas[2] = 34.1;
+       temperaturas[3] = 31.0;
+       temperaturas[4] = 32.4;
+
+       System.out.println("A temperatura do dia 1 é: " + temperaturas[0]);
+
+
+       for (int i=0; i < temperaturas.length; i++){ // usado para listar o arrys porem podendo ter 'legendea' junto na hora da impressão
+           System.out.println("A temperatura do dia " + (i + 1) + " é: " + temperaturas[i]);
+       }
+
+       for (double temp : temperaturas){ //usado para listar o arrys, porém apenas os valores
+           System.out.println(temp);
+       }
+
+
+
+    }
+}

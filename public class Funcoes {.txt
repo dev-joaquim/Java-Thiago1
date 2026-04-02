@@ -1,0 +1,32 @@
+public class Funcoes {
+
+    double a;
+    double b;
+    double res;
+
+    public void somar(){
+        res = a + b;
+        System.out.println("O resultado é: " + res);
+    }
+    public void subtracao(){
+        res = a - b;
+        System.out.println("O resultado é: " + res);
+    }
+    public void multiplicacao(){
+        res = a * b;
+        System.out.println("O resultado é: " + res);
+    }
+    public void divisao(){
+        res = a / b;
+        System.out.println("O resultado é: " + res);
+    }
+    public void areaTri(){
+        res = (a * b)/2;
+        System.out.println("O resultado é: " + res);
+    }
+    public void areaQua(){
+        res = a * a;
+        System.out.println("O resultado é: " + res);
+    }
+
+}

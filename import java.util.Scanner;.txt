@@ -1,0 +1,247 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Executar {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        Funcoes fc = new Funcoes();
+
+        int escolha = 0;
+        boolean valido = false;
+
+        while (true) {
+            System.out.println("Escolha sua operação:\n" +
+                    "Soma = 1\n" +
+                    "Subtração = 2\n" +
+                    "Multiplicação = 3\n" +
+                    "Divisão = 4\n" +
+                    "Área do Triangulo = 5\n" +
+                    "Área do Quadrado = 6\n");
+
+            try {
+                escolha = sc.nextInt();
+
+                if (escolha >= 1 && escolha <= 6) {
+                    break; // valor válido → sai do loop
+                } else {
+                    System.out.println("Valor inválido! Digite um número entre 1 e 6.\n");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida! Digite um número.\n");
+                sc.nextLine(); // limpa o buffer
+            }
+        }
+
+        while (escolha != 7){
+            if (escolha == 1){
+                System.out.println("Soma");
+                fc.a = 0;
+                valido = false;
+                while(!valido){
+                    System.out.println("Digite o primeiro valor ");
+                    try{
+                        fc.a = sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido! Tente novamente");
+                        sc.nextLine();
+                    }
+                }
+                fc.b = 0;
+                valido = false;
+                while(!valido){
+                    System.out.println("Digite o segundo valor ");
+                    try{
+                        fc.b = sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido! Tente novamente");
+                        sc.nextLine();
+                    }
+                }
+                fc.somar();
+            } else if (escolha==2) {
+                System.out.println("Subtração");
+
+                fc.a = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o primeiro valor ");
+                    try{
+                        fc.a = sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+
+                }
+
+                fc.b = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o segundo valor ");
+                    try{
+                        fc.b = sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+
+                }
+                fc.subtracao();
+            }else if (escolha==3) {
+                System.out.println("Multiplicação");
+                fc.a = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o primeiro valor ");
+                    try{
+                        fc.a= sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+                }
+                fc.b = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o segundo valor ");
+                    try{
+                        fc.b= sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+                }
+                fc.multiplicacao();
+            }else if (escolha==4) {
+                System.out.println("Divisão");
+                fc.a = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o primeiro valor ");
+                    try{
+                        fc.a= sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+                }
+                while(fc.a == 0){
+                    System.out.println("Não é possivel. Digite novamente");
+                    fc.a = sc.nextDouble();
+                }
+                fc.b = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o segundo valor ");
+                    try{
+                        fc.b= sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+                }
+                while(fc.b == 0){
+                    System.out.println("Não é possivel. Digite novamente");
+                    fc.b = sc.nextDouble();
+                }
+                fc.divisao();
+            }else if (escolha==5) {
+                System.out.println("Área do Triangulo");
+                fc.a = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o valor da base ");
+                    try{
+                        fc.a= sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+                }
+                while(fc.a <= 0){
+                    System.out.println("Não é possivel realizar a operação!");
+                    System.out.println("Digite o valor da base ");
+                    fc.a = sc.nextDouble();
+                }
+                fc.b = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o valor da altura");
+                    try{
+                        fc.b= sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+                }
+                while(fc.b <= 0){
+                    System.out.println("Não é possivel realizar a operação!");
+                    System.out.println("Digite o valor da altura ");
+                    fc.b = sc.nextDouble();
+                }
+                fc.areaTri();
+            }else if (escolha==6) {
+                System.out.println("Área do Quadrado");
+                fc.a = 0;
+                valido = false;
+                while (!valido){
+                    System.out.println("Digite o valor do lado ");
+                    try{
+                        fc.a= sc.nextDouble();
+                        valido = true;
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalido. Tente novamente! ");
+                        sc.nextLine();
+                    }
+                }
+                while (fc.a < 1){
+                    System.out.println("Não é possivel realizar a operação!");
+                    System.out.println("Digite o valor do lado ");
+                    fc.a = sc.nextDouble();
+                }
+                fc.areaQua();
+            }
+
+            System.out.println("");
+
+            escolha = 0;
+            valido = false;
+            while (!valido){
+                System.out.println("Escolha sua operação:" +"\n" +
+                        "Soma = 1" + "\n"+
+                        "Subtração = 2" + "\n"+
+                        "Multiplicação = 3" + "\n"+
+                        "Divisão = 4" + "\n"+
+                        "Área do Triangulo = 5" + "\n"+
+                        "Área do Quadrado = 6" + "\n" +
+                        "Para sair = 7 " + "\n");
+                try{
+                    escolha = sc.nextInt();
+                    valido = true;
+                }catch (InputMismatchException e){
+                    System.out.println("Invalido. Tente novamente!");
+                    sc.nextLine();
+                }
+            }
+
+
+
+        }
+
+        System.out.println("Obrigado!");
+
+
+    }
+}

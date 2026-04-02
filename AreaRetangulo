@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+public class AreaRetangulo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o lado do quadrado:");
+        double ladoa = sc.nextDouble();
+        System.out.println("Digite o outro lado do retangulo:");
+        double ladob = sc.nextDouble();
+
+        double res = ladoa * ladob;
+
+        System.out.println("A área do retângulo é: " + res);
+    }
+}        

@@ -1,0 +1,124 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        System.out.println("Gênero biológico");
+        System.out.println("Se for Homem digite (1) ");
+        System.out.println("Se for Mulher digite (2) ");
+        double genero = sc.nextDouble();
+
+        System.out.println("Quantos quilos (kg): ");
+        double kg = sc.nextDouble();
+
+        System.out.println("Qual sua altura (cm): ");
+        double altura = sc.nextDouble();
+
+        System.out.println("Qual sua idade (anos): ");
+        int anos = sc.nextInt();
+
+        double tbm = 0;
+        double tbh = 0;
+        if (genero == 1) {
+            tbh = 88.362 + (13.397 * kg) + (4.799 * altura) - (5.677 * anos);
+            System.out.println("Gasto diario: " + (df.format(tbh)));
+            System.out.println("Quanto de proteina: ");
+            double ptn = sc.nextDouble();
+
+            System.out.println("Quanto de carboidrato: ");
+            double carb = sc.nextDouble();
+
+            System.out.println("Quanto de gordura: ");
+            double fat = sc.nextDouble();
+
+            ptn = ptn * 4;
+
+            carb = carb * 4;
+
+            fat = fat * 9;
+
+            double res = fat + carb + ptn;
+
+            System.out.println("Nível de atividade física:");
+            System.out.println("Muito ativo digite (1): ");
+            System.out.println("Pouco ativo digite (2): ");
+            System.out.println("Nada ativo digite (3): ");
+
+            double ativo = sc.nextDouble();
+
+            if (ativo == 1) {
+                tbh = tbh * 1.8;
+            } else if (ativo == 2) {
+                tbh = tbh * 1.5;
+            } else {
+                tbh = tbh * 1.2;
+            }
+
+
+            if (res < tbh) {
+                System.out.println("voê esta em defcit calórico de " + (df.format(res - tbh)) + " saudável");
+            } else if ((fat * 0.2) > res) {
+                System.out.println("voê esta em defcit calórico de " + (df.format(res - tbh)) + " com excesso de gordura");
+            } else if ((fat * 0.2) > res) {
+                System.out.println("voê esta em superrafcit calórico de " + (df.format(res - tbh)) + " com excesso de gordura");
+            } else {
+                System.out.println("voê esta em superrafcit calórico de " + (df.format(res - tbh)) + " saudável");
+            }
+        }else {
+            tbm=447.593 + (9.247 * kg) + (3.098 * altura) - (4.330 * anos);
+            System.out.println("Gasto diario: " + df.format(tbm));
+
+            System.out.println("Quanto de proteina: ");
+            double ptn = sc.nextDouble();
+
+            System.out.println("Quanto de carboidrato: ");
+            double carb = sc.nextDouble();
+
+            System.out.println("Quanto de gordura: ");
+            double fat = sc.nextDouble();
+
+            ptn = ptn *4;
+
+            carb = carb * 4;
+
+            fat = fat * 9;
+
+            double res = fat + carb + ptn;
+            System.out.println("Nível de atividade física:");
+            System.out.println("Muito ativo digite (1): ");
+            System.out.println("Pouco ativo digite (2): ");
+            System.out.println("Nada ativo digite (3): ");
+
+            double ativo = sc.nextDouble();
+            if(ativo == 1){
+                tbm = tbm * 1.8;
+            } else if (ativo == 2) {
+                tbm = tbm * 1.5;
+            }else {
+                tbm = tbm * 1.2;
+            }
+
+
+
+
+            if (res < tbm) {
+                System.out.println("voê esta em defcit calórico de " + (df.format(res - tbm)) + " saudável");
+            } else if ((fat * 0.2) > res) {
+                System.out.println("voê esta em defcit calórico de " + (df.format(res - tbm)) + " com excesso de gordura");
+            } else if ((fat * 0.2) > res) {
+                System.out.println("voê esta em superrafcit calórico de " + (df.format(res - tbm)) + " com excesso de gordura");
+            } else {
+                System.out.println("voê esta em superrafcit calórico de " + (df.format(res - tbm)) + " saudável");
+            }
+        }
+
+
+
+
+
+    }
+}

@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+
+public class AreaQuadrado {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o lado do quadrado:");
+        double lado = sc.nextDouble();
+
+        double res = lado * lado;
+
+        System.out.println("A área do quadrado é: " + res);
+    }
+}        
